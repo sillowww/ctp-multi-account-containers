@@ -1,9 +1,11 @@
 const NUMBER_OF_KEYBOARD_SHORTCUTS = 10;
 
 async function setUpCheckBoxes() {
-  document.querySelectorAll("[data-permission-id]").forEach(async(el) => {
+  document.querySelectorAll("[data-permission-id]").forEach(async el => {
     const permissionId = el.dataset.permissionId;
-    const permissionEnabled = await browser.permissions.contains({ permissions: [permissionId] });
+    const permissionEnabled = await browser.permissions.contains({
+      permissions: [permissionId]
+    });
     el.checked = !!permissionEnabled;
   });
 }
@@ -20,12 +22,14 @@ function enablePermissionsInputs() {
   });
 }
 
-document.querySelectorAll("[data-permission-id").forEach(async(el) => {
+document.querySelectorAll("[data-permission-id").forEach(async el => {
   const permissionId = el.dataset.permissionId;
-  el.addEventListener("change", async() => {
+  el.addEventListener("change", async () => {
     if (el.checked) {
       disablePermissionsInputs();
-      const granted = await browser.permissions.request({ permissions: [permissionId] });
+      const granted = await browser.permissions.request({
+        permissions: [permissionId]
+      });
       if (!granted) {
         el.checked = false;
         enablePermissionsInputs();
@@ -39,29 +43,37 @@ document.querySelectorAll("[data-permission-id").forEach(async(el) => {
 async function maybeShowPermissionsWarningIcon() {
   const bothMozillaVpnPermissionsEnabled = await MozillaVPN.bothPermissionsEnabled();
   const permissionsWarningEl = document.querySelector(".warning-icon");
-  permissionsWarningEl.classList.toggle("show-warning", !bothMozillaVpnPermissionsEnabled);
+  permissionsWarningEl.classList.toggle(
+    "show-warning",
+    !bothMozillaVpnPermissionsEnabled
+  );
 }
 
 async function enableDisableSync() {
   const checkbox = document.querySelector("#syncCheck");
-  await browser.storage.local.set({syncEnabled: !!checkbox.checked});
+  await browser.storage.local.set({ syncEnabled: !!checkbox.checked });
   browser.runtime.sendMessage({ method: "resetSync" });
 }
 
 async function enableDisableReplaceTab() {
   const checkbox = document.querySelector("#replaceTabCheck");
-  await browser.storage.local.set({replaceTabEnabled: !!checkbox.checked});
+  await browser.storage.local.set({ replaceTabEnabled: !!checkbox.checked });
 }
 
 async function changeTheme(event) {
-  const theme = event.currentTarget;
-  await browser.storage.local.set({currentTheme: theme.value});
-  await browser.storage.local.set({currentThemeId: theme.selectedIndex});
+  const theme = event.currentTarget.value;
+  await browser.storage.local.set({ currentTheme: theme });
+  await browser.storage.local.set({
+    currentThemeId: event.currentTarget.selectedIndex
+  });
+  Utils.applyTheme();
 }
 
 async function setupOptions() {
   const { syncEnabled } = await browser.storage.local.get("syncEnabled");
-  const { replaceTabEnabled } = await browser.storage.local.get("replaceTabEnabled");
+  const { replaceTabEnabled } = await browser.storage.local.get(
+    "replaceTabEnabled"
+  );
   const { currentThemeId } = await browser.storage.local.get("currentThemeId");
 
   document.querySelector("#syncCheck").checked = !!syncEnabled;
@@ -70,8 +82,10 @@ async function setupOptions() {
   setupContainerShortcutSelects();
 }
 
-async function setupContainerShortcutSelects () {
-  const keyboardShortcut = await browser.runtime.sendMessage({method: "getShortcuts"});
+async function setupContainerShortcutSelects() {
+  const keyboardShortcut = await browser.runtime.sendMessage({
+    method: "getShortcuts"
+  });
   const identities = await browser.contextualIdentities.query({});
   const fragment = document.createDocumentFragment();
   const noneOption = document.createElement("option");
@@ -88,8 +102,8 @@ async function setupContainerShortcutSelects () {
     fragment.append(option);
   }
 
-  for (let i=0; i < NUMBER_OF_KEYBOARD_SHORTCUTS; i++) {
-    const shortcutKey = "open_container_"+i;
+  for (let i = 0; i < NUMBER_OF_KEYBOARD_SHORTCUTS; i++) {
+    const shortcutKey = "open_container_" + i;
     const shortcutSelect = document.getElementById(shortcutKey);
     shortcutSelect.appendChild(fragment.cloneNode(true));
     if (keyboardShortcut && keyboardShortcut[shortcutKey]) {
@@ -99,7 +113,7 @@ async function setupContainerShortcutSelects () {
   }
 }
 
-function storeShortcutChoice (event) {
+function storeShortcutChoice(event) {
   browser.runtime.sendMessage({
     method: "setShortcut",
     shortcut: event.target.id,
@@ -108,7 +122,7 @@ function storeShortcutChoice (event) {
 }
 
 function resetOnboarding() {
-  browser.storage.local.set({"onboarding-stage": 0});
+  browser.storage.local.set({ "onboarding-stage": 0 });
 }
 
 async function resetPermissionsUi() {
@@ -121,27 +135,35 @@ browser.permissions.onAdded.addListener(resetPermissionsUi);
 browser.permissions.onRemoved.addListener(resetPermissionsUi);
 
 document.addEventListener("DOMContentLoaded", setupOptions);
-document.querySelector("#syncCheck").addEventListener( "change", enableDisableSync);
-document.querySelector("#replaceTabCheck").addEventListener( "change", enableDisableReplaceTab);
-document.querySelector("#changeTheme").addEventListener( "change", changeTheme);
+document
+  .querySelector("#syncCheck")
+  .addEventListener("change", enableDisableSync);
+document
+  .querySelector("#replaceTabCheck")
+  .addEventListener("change", enableDisableReplaceTab);
+document.querySelector("#changeTheme").addEventListener("change", changeTheme);
 
 maybeShowPermissionsWarningIcon();
-for (let i=0; i < NUMBER_OF_KEYBOARD_SHORTCUTS; i++) {
-  document.querySelector("#open_container_"+i)
+for (let i = 0; i < NUMBER_OF_KEYBOARD_SHORTCUTS; i++) {
+  document
+    .querySelector("#open_container_" + i)
     .addEventListener("change", storeShortcutChoice);
 }
 
 document.querySelectorAll("[data-btn-id]").forEach(btn => {
   btn.addEventListener("click", () => {
     switch (btn.dataset.btnId) {
-    case "reset-onboarding":
-      resetOnboarding();
-      break;
-    case "moz-vpn-learn-more":
-      browser.tabs.create({
-        url: MozillaVPN.attachUtmParameters("https://support.mozilla.org/kb/protect-your-container-tabs-mozilla-vpn", "options-learn-more")
-      });
-      break;
+      case "reset-onboarding":
+        resetOnboarding();
+        break;
+      case "moz-vpn-learn-more":
+        browser.tabs.create({
+          url: MozillaVPN.attachUtmParameters(
+            "https://support.mozilla.org/kb/protect-your-container-tabs-mozilla-vpn",
+            "options-learn-more"
+          )
+        });
+        break;
     }
   });
 });

@@ -187,16 +187,20 @@ const Utils = {
       return currentTheme;
     }
     if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-      return "dark";
+      return "mocha";
     }
-    return "light";
+    return "latte";
   },
   async applyTheme() {
     const { currentTheme } = await browser.storage.local.get("currentTheme");
+    const darkThemes = ["mocha", "frappe", "macchiato"];
     const popup = document.getElementsByTagName("html")[0];
     const theme = Utils.getTheme(currentTheme, window);
+
+    const mode = darkThemes.some(t => theme.includes(t)) ? "dark" : "light";
+    popup.setAttribute("data-theme-mode", mode);
     popup.setAttribute("data-theme", theme);
   }
-};
+}
 
 window.Utils = Utils;

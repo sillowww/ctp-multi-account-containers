@@ -1,3 +1,5 @@
+@import url("./catppuccin.css");
+
 @font-face {
   font-family: "Metropolis";
   font-style: normal;
@@ -26,7 +28,6 @@
   src: url("/fonts/Inter-Medium.woff2") format("woff2");
 }
 
-[data-theme="light"],
 :root {
   --fontInter: "Inter", sans-serif;
   --fontInterMedium: "Inter-Medium", sans-serif;
@@ -58,129 +59,81 @@
   --icon-size: 1.166rem; /* 14px */
   --small-text-size: 0.833rem; /* 10px */
   --small-radius: 3px;
-  --icon-button-size: calc(calc(var(--block-line-separation-size) * 2) + 1.66rem); /* 20px */
+  --icon-button-size: calc(
+    calc(var(--block-line-separation-size) * 2) + 1.66rem
+  ); /* 20px */
   --inactive-opacity: 0.3;
   --overflow-size: 1px;
   --icon-fit: 8;
 
+  /* Catppuccin colors */
+  --bgColor: var(--base);
+  --badge-destructive-bg-color: var(--red);
+  --badge-destructive-text-color: var(--crust);
+  --button-bg-color-primary: var(--blue);
+  --button-bg-active-color-primary: var(--sapphire);
+  --button-bg-hover-color-primary: var(--sky);
+  --button-bg-focus-color-primary: var(--blue);
+  --button-text-color-primary: var(--crust);
+  --button-bg-color-secondary: var(--surface0);
+  --button-bg-active-color-secondary: var(--surface1);
+  --button-bg-hover-color-secondary: var(--surface2);
+  --button-destructive-bg-color: var(--red);
+  --button-destructive-bg-active-color: var(--maroon);
+  --button-destructive-bg-hover-color: var(--peach);
+  --button-destructive-bg-focus-color: var(--red);
+  --button-destructive-text-color: var(--crust);
+  --input-bg-color: var(--mantle);
+  --input-bg-focus-color: var(--mantle);
+  --input-bg-active-color: var(--surface0);
+  --input-border-color: var(--overlay0);
+  --input-border-focus-color: var(--blue);
+  --input-border-active-color: var(--blue);
+  --text-color-primary: var(--text);
+  --menu-bg-active-color: var(--surface1);
+  --menu-bg-hover-color: var(--surface2);
+  --panel-bg-color: var(--mantle);
+  --panel-separator-color: var(--surface0);
+  --link-color: var(--blue);
+  --link-hover-color: var(--sky);
+  --toggle-off-bg-color: var(--surface0);
+  --toggle-off-bg-active-color: var(--surface1);
+  --toggle-off-bg-hover-color: var(--surface2);
+  --toggle-off-bg-focus-color: var(--surface0);
+  --toggle-off-border-color: var(--overlay0);
+  --toggle-on-bg-color: var(--blue);
+  --toggle-on-bg-active-color: var(--sapphire);
+  --toggle-on-bg-hover-color: var(--sky);
+  --toggle-on-bg-focus-color: var(--blue);
+  --toggle-on-border-color: var(--blue);
+  --toggle-on-handle-bg-color: var(--crust);
+  --usercontext-bg-hover-color: var(--surface2);
+  --usercontext-bg-focus-color: var(--surface1);
+  --usercontext-bg-active-color: var(--surface0);
+  --moz-vpn-tout-shadow: 0 0 7px 0 var(--overlay0);
+
   background: var(--bgColor);
   margin-block: 0;
   margin-inline: 0;
-
-  /* Proton Colors */
-  --badge-destructive-bg-color: #e22850;
-  --badge-destructive-text-color: #fbfbfe;
-  --button-bg-color-primary: #0060df;
-  --button-bg-active-color-primary: #054096;
-  --button-bg-hover-color-primary: #0250bb;
-  --button-bg-focus-color-primary: #0060df;
-  --button-text-color-primary: #fbfbfe;
-  --button-bg-color-secondary: #f0f0f4;
-  --button-bg-active-color-secondary: #cfcfd8;
-  --button-bg-hover-color-secondary: #e0e0e6;
-  --button-destructive-bg-color: #e22850;
-  --button-destructive-bg-active-color: #810220;
-  --button-destructive-bg-hover-color: #c50042;
-  --button-destructive-bg-focus-color: #e22850;
-  --button-destructive-text-color: #fbfbfe;
-  --input-bg-color: #fff;
-  --input-bg-focus-color: #fff;
-  --input-bg-active-color: #054096;
-  --input-border-color: #8f8f9d;
-  --input-border-focus-color: #0060df;
-  --input-border-active-color: #054096;
-  --text-color-primary: #15141a;
-  --menu-bg-active-color: #cfcfd8;
-  --menu-bg-hover-color: #e0e0e6;
-  --panel-bg-color: #fff;
-  --panel-separator-color: rgba(240, 240, 244, 1);
-  --link-color: #0060df;
-  --link-hover-color: #0250bb;
-  --toggle-off-bg-color: #f0f0f4;
-  --toggle-off-bg-active-color: #cfcfd8;
-  --toggle-off-bg-hover-color: #e0e0e6;
-  --toggle-off-bg-focus-color: #f0f0f4;
-  --toggle-off-border-color: #8f8f9d;
-  --toggle-on-bg-color: #0060df;
-  --toggle-on-bg-active-color: #054096;
-  --toggle-on-bg-hover-color: #0250bb;
-  --toggle-on-bg-focus-color: #0060df;
-  --toggle-on-border-color: #0060df;
-  --toggle-on-handle-bg-color: #fff;
-  --usercontext-bg-hover-color: #f0f0fa;
-  --usercontext-bg-focus-color: #e0e0e6;
-  --usercontext-bg-active-color: #cfcfd8;
-  --moz-vpn-tout-shadow: 0 0 7px 0 #9498a25e;
 }
 
-[data-theme="dark"] {
+[data-theme="mocha"],
+[data-theme="macchiato"],
+[data-theme="frappe"] {
   --iconCloseX: url("/img/close-light.svg");
   --iconGear: url("/img/gear-icon-light.svg");
   --iconArrowRight: url("/img/arrow-icon-right-light.svg");
   --iconArrowLeft: url("/img/arrow-icon-left-light.svg");
   --iconProxyWarning: url("/img/proxy-warning-light.svg");
   --logoMozillaVpn: url("/img/moz-vpn-logo-light.svg");
-  --bgColor: #42404c;
-  --text-normal-color: #f9f9fa;
-  --primaryCtaDefault: var(--blue40);
-  --primaryCtaHover: var(--blue50);
-  --primaryCtaActive: var(--blue60);
-  --controllerActive: rgb(90, 89, 102);
-  --bgDark: #2b2932;
 
-  /* Proton Colors */
-  --badge-destructive-bg-color: #ff8480;
-  --badge-destructive-text-color: #15141a;
-  --button-bg-color-primary: #0df;
-  --button-bg-active-color-primary: #aaf2ff;
-  --button-bg-hover-color-primary: #80ebff;
-  --button-bg-focus-color-primary: #0df;
-  --button-text-color-primary: #15141a;
-  --button-bg-color-secondary: #2b2a33;
-  --button-bg-active-color-secondary: #5b5b66;
-  --button-bg-hover-color-secondary: #52525e;
-  --button-destructive-bg-color: #ff8480;
-  --button-destructive-bg-active-color: #ffdfe7;
-  --button-destructive-bg-hover-color: #ffbdc5;
-  --button-destructive-bg-focus-color: #ff8480;
-  --button-destructive-text-color: #15141a;
-
-  /* for the input background, we use dark-grey-60 instead of dark-grey-30
-   * instead the panel background is lighter than the page background
-   */
-  --input-bg-color: #2b2a33;
-  --input-bg-active-color: #aaf2ff;
-  --input-bg-focus-color: #52525e;
-  --input-border-color: #8f8f9d;
-  --input-border-active-color: #aaf2ff;
-  --input-border-focus-color: #0df;
-  --link-color: #0df;
-  --link-hover-color: #80ebff;
-  --text-color-primary: #fbfbfe;
-  --menu-bg-active-color: #5b5b66;
-  --menu-bg-hover-color: #52525e;
-  --panel-bg-color: #42414d;
-  --panel-separator-color: rgba(82, 82, 94, 1);
-
-  /* Toggle is currently called `.slider` in the code below. This should be
-   * changed in a follow-up patch to make it more inline with the terms used in
-   * the Proton Design System
-   */
-  --toggle-off-bg-color: #2b2a33;
-  --toggle-off-bg-active-color: #5b5b66;
-  --toggle-off-bg-hover-color: #52525e;
-  --toggle-off-bg-focus-color: #2b2a33;
-  --toggle-off-border-color: #8f8f9d;
-  --toggle-on-bg-color: #0df;
-  --toggle-on-bg-active-color: #aaf2ff;
-  --toggle-on-bg-hover-color: #80ebff;
-  --toggle-on-bg-focus-color: #0df;
-  --toggle-on-border-color: #0df;
-  --toggle-on-handle-bg-color: #42414d;
-  --usercontext-bg-active-color: #5b5b66;
-  --usercontext-bg-focus-color: #2b2a33;
-  --usercontext-bg-hover-color: #52525e;
-  --moz-vpn-tout-shadow: 0 0 7px 0 #7478825e;
+  --bgColor: var(--base);
+  --text-normal-color: var(--text);
+  --primaryCtaDefault: var(--blue);
+  --primaryCtaHover: var(--sky);
+  --primaryCtaActive: var(--sapphire);
+  --controllerActive: var(--surface1);
+  --bgDark: var(--mantle);
 }
 
 /* General Rules and Resets */
@@ -227,28 +180,28 @@ body {
 }
 
 /* Hack for menu icons to use a light color without affecting container icons */
-[data-theme="light"] img.delete-assignment,
-[data-theme="dark"] img.reset-assignment,
-[data-theme="dark"] .trash-button,
-[data-theme="dark"] img.menu-icon,
-[data-theme="dark"] .menu-icon > img,
-[data-theme="dark"] .menu-arrow > img,
-[data-theme="dark"] .info-icon > img {
+[data-theme-mode="light"] img.delete-assignment,
+[data-theme-mode="dark"] img.reset-assignment,
+[data-theme-mode="dark"] .trash-button,
+[data-theme-mode="dark"] img.menu-icon,
+[data-theme-mode="dark"] .menu-icon > img,
+[data-theme-mode="dark"] .menu-arrow > img,
+[data-theme-mode="dark"] .info-icon > img {
   filter: invert(1);
 }
 
-[data-theme="dark"] img.clear-storage-icon,
-[data-theme="dark"] img.delete-assignment,
-[data-theme="dark"] #edit-sites-assigned .menu-icon,
-[data-theme="dark"] #container-info-table .menu-icon {
+[data-theme-mode="dark"] img.clear-storage-icon,
+[data-theme-mode="dark"] img.delete-assignment,
+[data-theme-mode="dark"] #edit-sites-assigned .menu-icon,
+[data-theme-mode="dark"] #container-info-table .menu-icon {
   filter: invert(0);
 }
 
-[data-theme="dark"] [data-identity-color="grey"] {
+[data-theme-mode="dark"] [data-identity-color="grey"] {
   --identity-icon-color: var(--text-color-primary);
 }
 
-[data-theme="dark"] [data-identity-color="grey"]:hover {
+[data-theme-mode="dark"] [data-identity-color="grey"]:hover {
   --identity-icon-color: var(--text-color-primary);
 }
 
@@ -337,53 +290,47 @@ table {
 
 /* Color and icon helpers */
 [data-identity-color="blue"] {
-  --identity-tab-color: #37adff;
-  --identity-icon-color: #37adff;
+  --identity-tab-color: var(--blue);
+  --identity-icon-color: var(--blue);
 }
 
 [data-identity-color="turquoise"] {
-  --identity-tab-color: #00c79a;
-  --identity-icon-color: #00c79a;
+  --identity-tab-color: var(--teal);
+  --identity-icon-color: var(--teal);
 }
 
 [data-identity-color="green"] {
-  --identity-tab-color: #51cd00;
-  --identity-icon-color: #51cd00;
+  --identity-tab-color: var(--green);
+  --identity-icon-color: var(--green);
 }
 
-/* We disable no-descending-specificity so we can keep [data-theme="dark"]
- * rules grouped together at the beginning of the file
- */
-/* stylelint-disable no-descending-specificity */
 [data-identity-color="grey"] {
-  /* Only used for the edit panel */
-  --identity-icon-color: #616161;
+  --identity-icon-color: var(--overlay2);
 }
-/* stylelint-enable no-descending-specificity */
 
 [data-identity-color="yellow"] {
-  --identity-tab-color: #ffcb00;
-  --identity-icon-color: #ffcb00;
+  --identity-tab-color: var(--yellow);
+  --identity-icon-color: var(--yellow);
 }
 
 [data-identity-color="orange"] {
-  --identity-tab-color: #ff9f00;
-  --identity-icon-color: #ff9f00;
+  --identity-tab-color: var(--peach);
+  --identity-icon-color: var(--peach);
 }
 
 [data-identity-color="red"] {
-  --identity-tab-color: #ff613d;
-  --identity-icon-color: #ff613d;
+  --identity-tab-color: var(--red);
+  --identity-icon-color: var(--red);
 }
 
 [data-identity-color="pink"] {
-  --identity-tab-color: #ff4bda;
-  --identity-icon-color: #ff4bda;
+  --identity-tab-color: var(--pink);
+  --identity-icon-color: var(--pink);
 }
 
 [data-identity-color="purple"] {
-  --identity-tab-color: #af51f5;
-  --identity-icon-color: #af51f5;
+  --identity-tab-color: var(--mauve);
+  --identity-icon-color: var(--mauve);
 }
 
 [data-identity-icon="fingerprint"] {
