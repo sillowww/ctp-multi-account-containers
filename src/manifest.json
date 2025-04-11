@@ -1,6 +1,6 @@
 {
   "manifest_version": 2,
-  "name": "Firefox Multi-Account Containers",
+  "name": "Multi-Account Containers Catppuccin",
   "version": "8.2.0",
   "incognito": "not_allowed",
   "description": "__MSG_extensionDescription__",
@@ -8,7 +8,7 @@
     "48": "img/multiaccountcontainer-16.svg",
     "96": "img/multiaccountcontainer-16.svg"
   },
-  "homepage_url": "https://github.com/mozilla/multi-account-containers#readme",
+  "homepage_url": "https://github.com/sillowww/ctp-multi-account-containers#readme",
   "permissions": [
     "<all_urls>",
     "activeTab",
@@ -32,7 +32,7 @@
   ],
   "browser_specific_settings": {
     "gecko": {
-      "id": "@testpilot-containers",
+      "id": "@testpilot-containers-ctp",
       "strict_min_version": "91.1.0"
     }
   },
@@ -115,7 +115,7 @@
   "browser_action": {
     "browser_style": true,
     "default_icon": "img/multiaccountcontainer-16.svg",
-    "default_title": "Firefox Multi-Account Containers",
+    "default_title": "Multi-Account Containers",
     "default_popup": "popup.html",
     "default_area": "navbar",
     "theme_icons": [

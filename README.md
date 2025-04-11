@@ -1,33 +1,24 @@
-# Multi-Account Containers
+<h3 align="center">
+	<img src="https://raw.githubusercontent.com/catppuccin/catppuccin/main/assets/logos/exports/1544x1544_circle.png" width="100" alt="Logo"/><br/>
+	<img src="https://raw.githubusercontent.com/catppuccin/catppuccin/main/assets/misc/transparent.png" height="30" width="0px"/>
+	Catppuccin for <a href="https://github.com/mozilla/multi-account-containers#readme">Firefox Multi-Account Containers</a>
+	<img src="https://raw.githubusercontent.com/catppuccin/catppuccin/main/assets/misc/transparent.png" height="30" width="0px"/>
+</h3>
 
-[![Test](https://github.com/mozilla/multi-account-containers/actions/workflows/test.yaml/badge.svg)](https://github.com/mozilla/multi-account-containers/actions/workflows/test.yaml)
+<p align="center">
+    <a href="https://github.com/catppuccin/discord/stargazers"><img src="https://img.shields.io/github/stars/sillowww/ctp-multi-account-containers?colorA=363a4f&colorB=b7bdf8&style=for-the-badge"></a>
+    <a href="https://github.com/catppuccin/discord/issues"><img src="https://img.shields.io/github/issues/sillowww/ctp-multi-account-containers?colorA=363a4f&colorB=f5a97f&style=for-the-badge"></a>
+    <a href="https://github.com/catppuccin/discord/contributors"><img src="https://img.shields.io/github/contributors/sillowww/ctp-multi-account-containers?colorA=363a4f&colorB=a6da95&style=for-the-badge"></a>
+</p>
 
-The Firefox Multi-Account Containers extension lets you carve out a separate box for each of your online lives – no more opening a different browser just to check your work email!
+<p align="center">
+    <img src="https://cdn.discordapp.com/attachments/1359315933797285951/1360385275464782058/image-2.png?ex=67faed04&is=67f99b84&hm=09361b15aa167e89ab1e00aef827a9eb31af2dafbd04ecb0a1a6e84c96c70125&" />
+</p>
 
-Learn more about Multi-Account Containers in
-[our end-user documentation][enduser].
+todo.
 
-## Contributing
+&nbsp;
 
-Everyone is welcome to contribute to Multi-Account Containers. To learn how
-to contribute a patch to Multi-Account Container, please
-[read our contributing guide][contributing].
-
-You can also chat with us on [our Matrix room][matrix] or ask in [our discussions board][discussions].
-
-This repository is governed by Mozilla's code of conduct and etiquette
-guidelines. For more details, [please read the Mozilla Community Participation Guidelines][cpg].
-
-### License
-
-This Source Code Form is subject to the terms of the Mozilla Public
-License, v. 2.0. If a copy of the MPL was not distributed with this
-file, You can obtain one at https://mozilla.org/MPL/2.0/.
-
-<!-- Please keep the list in alphabetical order -->
-[contributing]: CONTRIBUTING.md
-[cpg]: https://www.mozilla.org/about/governance/policies/participation/
-[enduser]: https://support.mozilla.org/en-US/kb/containers
-[forum]: https://discourse.mozilla.org/c/containers/223
-[discussions]: https://github.com/mozilla/multi-account-containers/discussions
-[matrix]: https://matrix.to/#/#containers:mozilla.org
+<p align="center"><img src="https://raw.githubusercontent.com/catppuccin/catppuccin/main/assets/footers/gray0_ctp_on_line.svg?sanitize=true" /></p>
+<p align="center">Copyright &copy; 2021-present <a href="https://github.com/catppuccin" target="_blank">Catppuccin Org</a>
+<p align="center"><a href="https://github.com/catppuccin/catppuccin/blob/main/LICENSE"><img src="https://img.shields.io/static/v1.svg?style=for-the-badge&label=License&message=MIT&colorA=363a4f&colorB=b7bdf8"/></a></p>
