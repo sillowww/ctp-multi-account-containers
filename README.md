@@ -12,7 +12,7 @@
 </p>
 
 <p align="center">
-    <img src="https://cdn.discordapp.com/attachments/1359315933797285951/1360385275464782058/image-2.png?ex=67faed04&is=67f99b84&hm=09361b15aa167e89ab1e00aef827a9eb31af2dafbd04ecb0a1a6e84c96c70125&" />
+    <img src=".github/assets/preview.webp" />
 </p>
 
 todo.
