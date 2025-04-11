@@ -59,9 +59,7 @@
   --icon-size: 1.166rem; /* 14px */
   --small-text-size: 0.833rem; /* 10px */
   --small-radius: 3px;
-  --icon-button-size: calc(
-    calc(var(--block-line-separation-size) * 2) + 1.66rem
-  ); /* 20px */
+  --icon-button-size: calc(calc(var(--block-line-separation-size) * 2) + 1.66rem); /* 20px */
   --inactive-opacity: 0.3;
   --overflow-size: 1px;
   --icon-fit: 8;
@@ -126,7 +124,6 @@
   --iconArrowLeft: url("/img/arrow-icon-left-light.svg");
   --iconProxyWarning: url("/img/proxy-warning-light.svg");
   --logoMozillaVpn: url("/img/moz-vpn-logo-light.svg");
-
   --bgColor: var(--base);
   --text-normal-color: var(--text);
   --primaryCtaDefault: var(--blue);
@@ -195,14 +192,6 @@ body {
 [data-theme-mode="dark"] #edit-sites-assigned .menu-icon,
 [data-theme-mode="dark"] #container-info-table .menu-icon {
   filter: invert(0);
-}
-
-[data-theme-mode="dark"] [data-identity-color="grey"] {
-  --identity-icon-color: var(--text-color-primary);
-}
-
-[data-theme-mode="dark"] [data-identity-color="grey"]:hover {
-  --identity-icon-color: var(--text-color-primary);
 }
 
 *,
@@ -306,6 +295,14 @@ table {
 
 [data-identity-color="grey"] {
   --identity-icon-color: var(--overlay2);
+}
+
+[data-theme-mode="dark"] [data-identity-color="grey"] {
+  --identity-icon-color: var(--text-color-primary);
+}
+
+[data-theme-mode="dark"] [data-identity-color="grey"]:hover {
+  --identity-icon-color: var(--text-color-primary);
 }
 
 [data-identity-color="yellow"] {

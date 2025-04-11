@@ -6,7 +6,7 @@ body {
   color: hsl(233.793 16.022% 35.49%);
   font-size: 13px;
   overflow: hidden;
-  padding-top: 10px;
+  padding: 9px 0 0 0;
 }
 
 label {
@@ -29,6 +29,7 @@ form {
   flex-direction: column;
   padding: 0.5rem;
   border-radius: 1rem;
+
   /* padding-block-end: 1rem; */
 }
 
@@ -68,7 +69,8 @@ button {
   flex-direction: column;
 }
 
-h3.moz-vpn-proxy-permissions-title, h3 {
+h3.moz-vpn-proxy-permissions-title,
+h3 {
   margin-block-start: 0;
   margin: 0;
   position: relative;
@@ -113,9 +115,9 @@ h3.moz-vpn-proxy-permissions-title::after {
 
 @media (prefers-color-scheme: dark) {
   body {
-      background: #23212a;
+    background: #23212a;
   }
-  
+
   form {
     background: hsl(229.091 18.644% 23.137%);
     color: hsl(227.234 70.149% 86.863%);
